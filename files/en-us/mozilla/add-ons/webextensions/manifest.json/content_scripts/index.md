@@ -281,6 +281,35 @@ Details of all the keys you can include are given in the table below.
         </p>
       </td>
     </tr>
+    <tr>
+      <td>
+        <a id="world"><code>world</code></a>
+      </td>
+      <td><code>String</code></td>
+      <td>
+        <p>
+          This option is only available on Chromium +95 based browsers 
+          and determine the execution context of the injected script.
+        </p>
+        <dl>
+          <dt><code>"ISOLATED"</code></dt>
+          <dd>
+            The isolated world of this extension. This is the default behavior.
+          </dd>
+          <dt><code>"MAIN"</code></dt>
+          <dd>
+            The context of the current document.
+            This injects the script directly into the Web page context.
+            The script will have access to the <code>window</code> property of the page,
+            and variables exposed by the script will be visible and accessible
+            by other scripts loaded by the origin. <b>Please note that it is not
+            possible to use the extension API in this mode, as the script is executed
+            in the context of the document and not the extension context.</b>
+          </dd>
+        </dl>
+        <p>The default value is <code>"MAIN"</code>.</p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
